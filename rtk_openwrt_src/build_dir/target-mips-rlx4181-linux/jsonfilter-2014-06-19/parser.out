@@ -1,0 +1,663 @@
+State 0:
+          input ::= * expr
+          expr ::= * T_LABEL T_EQ path
+          expr ::= * path
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+
+                       T_LABEL shift  25
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                         input accept
+                          expr shift  26
+                          path shift  27
+
+State 1:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          segment ::= T_BROPEN * union_exps T_BRCLOSE
+          union_exps ::= * union_exp
+          union_exp ::= * union_exp T_UNION or_exps
+          union_exp ::= * or_exps
+          or_exps ::= * or_exp
+          or_exp ::= * or_exp T_OR and_exps
+          or_exp ::= * and_exps
+          and_exps ::= * and_exp
+          and_exp ::= * and_exp T_AND cmp_exp
+          and_exp ::= * cmp_exp
+          cmp_exp ::= * unary_exp T_LT unary_exp
+          cmp_exp ::= * unary_exp T_LE unary_exp
+          cmp_exp ::= * unary_exp T_GT unary_exp
+          cmp_exp ::= * unary_exp T_GE unary_exp
+          cmp_exp ::= * unary_exp T_EQ unary_exp
+          cmp_exp ::= * unary_exp T_NE unary_exp
+          cmp_exp ::= * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                    union_exps shift  24
+                     union_exp shift  23
+                       or_exps shift  28
+                        or_exp shift  22
+                      and_exps shift  38
+                       and_exp shift  21
+                       cmp_exp shift  37
+                     unary_exp shift  18
+
+State 2:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          or_exps ::= * or_exp
+          or_exp ::= * or_exp T_OR and_exps
+          or_exp ::= * and_exps
+          and_exps ::= * and_exp
+          and_exp ::= * and_exp T_AND cmp_exp
+          and_exp ::= * cmp_exp
+          cmp_exp ::= * unary_exp T_LT unary_exp
+          cmp_exp ::= * unary_exp T_LE unary_exp
+          cmp_exp ::= * unary_exp T_GT unary_exp
+          cmp_exp ::= * unary_exp T_GE unary_exp
+          cmp_exp ::= * unary_exp T_EQ unary_exp
+          cmp_exp ::= * unary_exp T_NE unary_exp
+          cmp_exp ::= * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= T_POPEN * or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                       or_exps shift  20
+                        or_exp shift  22
+                      and_exps shift  38
+                       and_exp shift  21
+                       cmp_exp shift  37
+                     unary_exp shift  18
+
+State 3:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          union_exp ::= union_exp T_UNION * or_exps
+          or_exps ::= * or_exp
+          or_exp ::= * or_exp T_OR and_exps
+          or_exp ::= * and_exps
+          and_exps ::= * and_exp
+          and_exp ::= * and_exp T_AND cmp_exp
+          and_exp ::= * cmp_exp
+          cmp_exp ::= * unary_exp T_LT unary_exp
+          cmp_exp ::= * unary_exp T_LE unary_exp
+          cmp_exp ::= * unary_exp T_GT unary_exp
+          cmp_exp ::= * unary_exp T_GE unary_exp
+          cmp_exp ::= * unary_exp T_EQ unary_exp
+          cmp_exp ::= * unary_exp T_NE unary_exp
+          cmp_exp ::= * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                       or_exps shift  46
+                        or_exp shift  22
+                      and_exps shift  38
+                       and_exp shift  21
+                       cmp_exp shift  37
+                     unary_exp shift  18
+
+State 4:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          or_exp ::= or_exp T_OR * and_exps
+          and_exps ::= * and_exp
+          and_exp ::= * and_exp T_AND cmp_exp
+          and_exp ::= * cmp_exp
+          cmp_exp ::= * unary_exp T_LT unary_exp
+          cmp_exp ::= * unary_exp T_LE unary_exp
+          cmp_exp ::= * unary_exp T_GT unary_exp
+          cmp_exp ::= * unary_exp T_GE unary_exp
+          cmp_exp ::= * unary_exp T_EQ unary_exp
+          cmp_exp ::= * unary_exp T_NE unary_exp
+          cmp_exp ::= * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                      and_exps shift  45
+                       and_exp shift  21
+                       cmp_exp shift  37
+                     unary_exp shift  18
+
+State 5:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          and_exp ::= and_exp T_AND * cmp_exp
+          cmp_exp ::= * unary_exp T_LT unary_exp
+          cmp_exp ::= * unary_exp T_LE unary_exp
+          cmp_exp ::= * unary_exp T_GT unary_exp
+          cmp_exp ::= * unary_exp T_GE unary_exp
+          cmp_exp ::= * unary_exp T_EQ unary_exp
+          cmp_exp ::= * unary_exp T_NE unary_exp
+          cmp_exp ::= * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                       cmp_exp shift  44
+                     unary_exp shift  18
+
+State 6:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          cmp_exp ::= unary_exp T_NE * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                     unary_exp shift  29
+
+State 7:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          cmp_exp ::= unary_exp T_EQ * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                     unary_exp shift  30
+
+State 8:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          cmp_exp ::= unary_exp T_GE * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                     unary_exp shift  31
+
+State 9:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          cmp_exp ::= unary_exp T_GT * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                     unary_exp shift  32
+
+State 10:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          cmp_exp ::= unary_exp T_LE * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                     unary_exp shift  33
+
+State 11:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= T_NOT * unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                     unary_exp shift  35
+
+State 12:
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+          cmp_exp ::= unary_exp T_LT * unary_exp
+          unary_exp ::= * T_BOOL
+          unary_exp ::= * T_NUMBER
+          unary_exp ::= * T_STRING
+          unary_exp ::= * T_WILDCARD
+          unary_exp ::= * T_POPEN or_exps T_PCLOSE
+          unary_exp ::= * T_NOT unary_exp
+          unary_exp ::= * path
+
+                         T_NOT shift  11
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                    T_WILDCARD shift  39
+                        T_BOOL shift  42
+                      T_NUMBER shift  41
+                      T_STRING shift  40
+                       T_POPEN shift  2
+                          path shift  34
+                     unary_exp shift  43
+
+State 13:
+          path ::= T_THIS * segments
+          segments ::= * segments segment
+          segments ::= * segment
+          segment ::= * T_DOT T_LABEL
+          segment ::= * T_DOT T_WILDCARD
+          segment ::= * T_BROPEN union_exps T_BRCLOSE
+
+                         T_DOT shift  19
+                      T_BROPEN shift  1
+                      segments shift  15
+                       segment shift  48
+
+State 14:
+          path ::= T_ROOT * segments
+          segments ::= * segments segment
+          segments ::= * segment
+          segment ::= * T_DOT T_LABEL
+          segment ::= * T_DOT T_WILDCARD
+          segment ::= * T_BROPEN union_exps T_BRCLOSE
+
+                         T_DOT shift  19
+                      T_BROPEN shift  1
+                      segments shift  16
+                       segment shift  48
+
+State 15:
+      (4) path ::= T_THIS segments *
+          segments ::= segments * segment
+          segment ::= * T_DOT T_LABEL
+          segment ::= * T_DOT T_WILDCARD
+          segment ::= * T_BROPEN union_exps T_BRCLOSE
+
+                         T_DOT shift  19
+                      T_BROPEN shift  1
+                       segment shift  51
+                     {default} reduce 4
+
+State 16:
+      (3) path ::= T_ROOT segments *
+          segments ::= segments * segment
+          segment ::= * T_DOT T_LABEL
+          segment ::= * T_DOT T_WILDCARD
+          segment ::= * T_BROPEN union_exps T_BRCLOSE
+
+                         T_DOT shift  19
+                      T_BROPEN shift  1
+                       segment shift  51
+                     {default} reduce 3
+
+State 17:
+          expr ::= T_LABEL T_EQ * path
+          path ::= * T_ROOT segments
+          path ::= * T_THIS segments
+
+                        T_ROOT shift  14
+                        T_THIS shift  13
+                          path shift  52
+
+State 18:
+          cmp_exp ::= unary_exp * T_LT unary_exp
+          cmp_exp ::= unary_exp * T_LE unary_exp
+          cmp_exp ::= unary_exp * T_GT unary_exp
+          cmp_exp ::= unary_exp * T_GE unary_exp
+          cmp_exp ::= unary_exp * T_EQ unary_exp
+          cmp_exp ::= unary_exp * T_NE unary_exp
+     (25) cmp_exp ::= unary_exp *
+
+                          T_EQ shift  7
+                          T_NE shift  6
+                          T_GT shift  9
+                          T_GE shift  8
+                          T_LT shift  12
+                          T_LE shift  10
+                     {default} reduce 25
+
+State 19:
+          segment ::= T_DOT * T_LABEL
+          segment ::= T_DOT * T_WILDCARD
+
+                       T_LABEL shift  50
+                    T_WILDCARD shift  49
+
+State 20:
+          unary_exp ::= T_POPEN or_exps * T_PCLOSE
+
+                      T_PCLOSE shift  36
+
+State 21:
+     (16) and_exps ::= and_exp *
+          and_exp ::= and_exp * T_AND cmp_exp
+
+                         T_AND shift  5
+                     {default} reduce 16
+
+State 22:
+     (13) or_exps ::= or_exp *
+          or_exp ::= or_exp * T_OR and_exps
+
+                          T_OR shift  4
+                     {default} reduce 13
+
+State 23:
+     (10) union_exps ::= union_exp *
+          union_exp ::= union_exp * T_UNION or_exps
+
+                       T_UNION shift  3
+                     {default} reduce 10
+
+State 24:
+          segment ::= T_BROPEN union_exps * T_BRCLOSE
+
+                     T_BRCLOSE shift  47
+
+State 25:
+          expr ::= T_LABEL * T_EQ path
+
+                          T_EQ shift  17
+
+State 26:
+      (0) input ::= expr *
+
+                             $ reduce 0
+
+State 27:
+      (2) expr ::= path *
+
+                     {default} reduce 2
+
+State 28:
+     (12) union_exp ::= or_exps *
+
+                     {default} reduce 12
+
+State 29:
+     (24) cmp_exp ::= unary_exp T_NE unary_exp *
+
+                     {default} reduce 24
+
+State 30:
+     (23) cmp_exp ::= unary_exp T_EQ unary_exp *
+
+                     {default} reduce 23
+
+State 31:
+     (22) cmp_exp ::= unary_exp T_GE unary_exp *
+
+                     {default} reduce 22
+
+State 32:
+     (21) cmp_exp ::= unary_exp T_GT unary_exp *
+
+                     {default} reduce 21
+
+State 33:
+     (20) cmp_exp ::= unary_exp T_LE unary_exp *
+
+                     {default} reduce 20
+
+State 34:
+     (32) unary_exp ::= path *
+
+                     {default} reduce 32
+
+State 35:
+     (31) unary_exp ::= T_NOT unary_exp *
+
+                     {default} reduce 31
+
+State 36:
+     (30) unary_exp ::= T_POPEN or_exps T_PCLOSE *
+
+                     {default} reduce 30
+
+State 37:
+     (18) and_exp ::= cmp_exp *
+
+                     {default} reduce 18
+
+State 38:
+     (15) or_exp ::= and_exps *
+
+                     {default} reduce 15
+
+State 39:
+     (29) unary_exp ::= T_WILDCARD *
+
+                     {default} reduce 29
+
+State 40:
+     (28) unary_exp ::= T_STRING *
+
+                     {default} reduce 28
+
+State 41:
+     (27) unary_exp ::= T_NUMBER *
+
+                     {default} reduce 27
+
+State 42:
+     (26) unary_exp ::= T_BOOL *
+
+                     {default} reduce 26
+
+State 43:
+     (19) cmp_exp ::= unary_exp T_LT unary_exp *
+
+                     {default} reduce 19
+
+State 44:
+     (17) and_exp ::= and_exp T_AND cmp_exp *
+
+                     {default} reduce 17
+
+State 45:
+     (14) or_exp ::= or_exp T_OR and_exps *
+
+                     {default} reduce 14
+
+State 46:
+     (11) union_exp ::= union_exp T_UNION or_exps *
+
+                     {default} reduce 11
+
+State 47:
+      (9) segment ::= T_BROPEN union_exps T_BRCLOSE *
+
+                     {default} reduce 9
+
+State 48:
+      (6) segments ::= segment *
+
+                     {default} reduce 6
+
+State 49:
+      (8) segment ::= T_DOT T_WILDCARD *
+
+                     {default} reduce 8
+
+State 50:
+      (7) segment ::= T_DOT T_LABEL *
+
+                     {default} reduce 7
+
+State 51:
+      (5) segments ::= segments segment *
+
+                     {default} reduce 5
+
+State 52:
+      (1) expr ::= T_LABEL T_EQ path *
+
+                     {default} reduce 1
+
+----------------------------------------------------
+Symbols:
+    0: $:
+    1: T_AND
+    2: T_OR
+    3: T_UNION
+    4: T_EQ
+    5: T_NE
+    6: T_GT
+    7: T_GE
+    8: T_LT
+    9: T_LE
+   10: T_NOT
+   11: T_LABEL
+   12: T_ROOT
+   13: T_THIS
+   14: T_DOT
+   15: T_WILDCARD
+   16: T_BROPEN
+   17: T_BRCLOSE
+   18: T_BOOL
+   19: T_NUMBER
+   20: T_STRING
+   21: T_POPEN
+   22: T_PCLOSE
+   23: error:
+   24: input: T_LABEL T_ROOT T_THIS
+   25: expr: T_LABEL T_ROOT T_THIS
+   26: path: T_ROOT T_THIS
+   27: segments: T_DOT T_BROPEN
+   28: segment: T_DOT T_BROPEN
+   29: union_exps: T_NOT T_ROOT T_THIS T_WILDCARD T_BOOL T_NUMBER T_STRING T_POPEN
+   30: union_exp: T_NOT T_ROOT T_THIS T_WILDCARD T_BOOL T_NUMBER T_STRING T_POPEN
+   31: or_exps: T_NOT T_ROOT T_THIS T_WILDCARD T_BOOL T_NUMBER T_STRING T_POPEN
+   32: or_exp: T_NOT T_ROOT T_THIS T_WILDCARD T_BOOL T_NUMBER T_STRING T_POPEN
+   33: and_exps: T_NOT T_ROOT T_THIS T_WILDCARD T_BOOL T_NUMBER T_STRING T_POPEN
+   34: and_exp: T_NOT T_ROOT T_THIS T_WILDCARD T_BOOL T_NUMBER T_STRING T_POPEN
+   35: cmp_exp: T_NOT T_ROOT T_THIS T_WILDCARD T_BOOL T_NUMBER T_STRING T_POPEN
+   36: unary_exp: T_NOT T_ROOT T_THIS T_WILDCARD T_BOOL T_NUMBER T_STRING T_POPEN

@@ -1,0 +1,1 @@
+../mpn/mips32/sub_n.asm

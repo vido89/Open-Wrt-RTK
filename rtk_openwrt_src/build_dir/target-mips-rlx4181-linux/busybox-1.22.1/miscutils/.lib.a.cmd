@@ -1,0 +1,1 @@
+cmd_miscutils/lib.a := rm -f miscutils/lib.a; rsdk-linux-ar  rcs miscutils/lib.a miscutils/crond.o miscutils/crontab.o miscutils/devmem.o miscutils/less.o miscutils/lock.o miscutils/strings.o miscutils/time.o

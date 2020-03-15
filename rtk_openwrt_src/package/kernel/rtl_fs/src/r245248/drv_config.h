@@ -1,0 +1,5 @@
+#define UFSD_DISABLE_UGM 1
+#define UFSD_CHECK_BDI 1
+#define UFSD_TRACE 1
+#define UFSD_BUILTINT_UTF8 1
+#define UFSD_SMART_DIRTY_SEC 0

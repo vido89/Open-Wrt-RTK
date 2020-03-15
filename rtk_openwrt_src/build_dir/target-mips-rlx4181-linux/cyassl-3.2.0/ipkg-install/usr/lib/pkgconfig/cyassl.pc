@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: cyassl
+Description: cyassl C library.
+Version: 3.2.0
+Libs: -L${libdir} -lcyassl
+Cflags: -I${includedir}

@@ -1,0 +1,2 @@
+/etc/modules.d/20-fastpath
+/lib/modules/3.10.49/fastpath.ko

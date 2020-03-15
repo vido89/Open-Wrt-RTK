@@ -1,0 +1,14 @@
+kernel
+kmod-crypto-core
+kmod-crypto-aes
+kmod-crypto-arc4
+kmod-lib-crc-ccitt
+kmod-ipt-core
+kmod-ipt-conntrack
+kmod-ipt-nat
+kmod-ipt-nathelper
+kmod-ipv6
+kmod-slhc
+kmod-ppp
+kmod-pppox
+kmod-pppoe

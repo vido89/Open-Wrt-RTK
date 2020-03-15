@@ -1,0 +1,1 @@
+@set LOCATE_DB /home/slobodan/openwrt-rtk/rtk_openwrt_src/staging_dir/host/var/locatedb

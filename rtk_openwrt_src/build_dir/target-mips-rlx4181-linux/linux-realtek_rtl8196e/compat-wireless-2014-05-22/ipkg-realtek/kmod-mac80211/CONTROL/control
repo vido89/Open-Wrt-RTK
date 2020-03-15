@@ -1,0 +1,9 @@
+Package: kmod-mac80211
+Version: 3.10.49+2014-05-22-1
+Depends: kernel (=3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-crypto-core, kmod-crypto-arc4, kmod-crypto-aes, kmod-cfg80211, hostapd-common
+Source: package/kernel/mac80211
+Section: kernel
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: realtek
+Installed-Size: 202196
+Description:  Generic IEEE 802.11 Networking Stack (mac80211)

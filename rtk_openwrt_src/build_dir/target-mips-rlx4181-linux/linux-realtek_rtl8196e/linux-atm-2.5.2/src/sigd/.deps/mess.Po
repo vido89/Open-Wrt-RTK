@@ -1,0 +1,3 @@
+mess.o: mess.c ../../config.h
+
+../../config.h:

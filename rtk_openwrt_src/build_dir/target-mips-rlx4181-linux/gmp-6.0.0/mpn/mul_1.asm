@@ -1,0 +1,1 @@
+../mpn/mips32/mul_1.asm

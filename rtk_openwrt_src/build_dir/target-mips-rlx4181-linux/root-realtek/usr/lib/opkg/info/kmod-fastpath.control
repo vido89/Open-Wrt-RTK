@@ -1,0 +1,8 @@
+Package: kmod-fastpath
+Version: 3.10.49+0.1-1
+Depends: kernel (=3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-ipt-core, kmod-ipt-conntrack, kmod-ipt-nat, kmod-ppp
+Source: package/kernel/fastpath
+Section: kernel
+Architecture: realtek
+Installed-Size: 37455
+Description:  Kernel modules for fastpath support

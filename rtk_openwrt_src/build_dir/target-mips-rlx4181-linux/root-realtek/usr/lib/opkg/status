@@ -1,0 +1,584 @@
+Package: libuci-lua
+Version: 2014-04-11.1-1
+Depends: libc, libuci, liblua
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306211
+
+Package: libc
+Version: -1
+Depends: libgcc
+Status: install hold installed
+Essential: yes
+Architecture: realtek
+Installed-Time: 1584306205
+Auto-Installed: yes
+
+Package: opkg
+Version: 9c97d5ecd795709c8584e972bfdf3aee3a5b846d-7
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Conffiles:
+ /etc/opkg.conf a5d9bdb11adcf096d47ca596502f7ff2
+Installed-Time: 1584306211
+
+Package: ubus
+Version: 2014-09-17-4c4f35cf2230d70b9ddd87638ca911e8a563f2f3
+Depends: libc, libubus, libblobmsg-json, ubusd
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306206
+Auto-Installed: yes
+
+Package: iw
+Version: 3.15-1
+Depends: libc, libnl-tiny
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306208
+
+Package: busybox
+Version: 1.22.1-2
+Depends: libc
+Status: install user installed
+Essential: yes
+Architecture: realtek
+Installed-Time: 1584306207
+
+Package: libubus-lua
+Version: 2014-09-17-4c4f35cf2230d70b9ddd87638ca911e8a563f2f3
+Depends: libc, libubus, liblua
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306211
+
+Package: libiwinfo-lua
+Version: 51
+Depends: libc, libiwinfo, liblua
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306211
+
+Package: libiwinfo
+Version: 51
+Depends: libc, libnl-tiny
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306210
+Auto-Installed: yes
+
+Package: kmod-lib-crc-ccitt
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb)
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306209
+Auto-Installed: yes
+
+Package: luci-theme-openwrt
+Version: 0.12+git-16.038.38474-0d510b2-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306213
+
+Package: luci-theme-bootstrap
+Version: 0.12+git-16.038.38474-0d510b2-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306213
+
+Package: kmod-pppoe
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-ppp, kmod-pppox
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306210
+
+Package: kmod-pppox
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-ppp
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306210
+Auto-Installed: yes
+
+Package: kmod-ipt-conntrack
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-ipt-core
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306208
+Auto-Installed: yes
+
+Package: base-files
+Version: 156-r42887
+Depends: libc, netifd, procd, jsonfilter
+Status: install user installed
+Architecture: realtek
+Conffiles:
+ /etc/hosts 0eea71665fb6890c06421fd13aa3f849
+ /etc/inittab 33da9049fd292d4f373c3df77a50c2dc
+ /etc/group 4a116d818b2f49e14939d581ec786de1
+ /etc/passwd 8a31e6d3e2d67fc7b99f56055e9d802b
+ /etc/shadow e1194594c90be12f82b249ea540cb0da
+ /etc/profile cc981230ccc3b0708270713f7f9dc6b2
+ /etc/shells 725ba6f40dff0612f61ecd3f171bb3e1
+ /etc/sysctl.conf bc01548b9df5cf3efbeaf7ca15a475d1
+ /etc/rc.local 6f8bfdaf36d3ec4aa9be6e96fa61d32b
+ /etc/sysupgrade.conf f91aef484370cefee501d64b5725c1d2
+ /etc/config/system 8c49998326d3c5800eb43dae790e4444
+ /etc/config/network 8b8629b64e670db568b67680c240304e
+Installed-Time: 1584306207
+
+Package: netifd
+Version: 2014-09-08-46c569989f984226916fec28dd8ef152a664043e
+Depends: libc, libuci, libnl-tiny, libubus, ubus, ubusd, jshn, libubox
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306205
+Auto-Installed: yes
+
+Package: dnsmasq
+Version: 2.71-4
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Conffiles:
+ /etc/config/dhcp a29065c410fa480f3ccf115cc1a197f0
+ /etc/dnsmasq.conf 7cf378e58d3fe5db31f4116a16c15c61
+Installed-Time: 1584306207
+
+Package: procd
+Version: 2014-09-15-c1a558f7d0c1e6c1ffa5a47d557a7b45205eef1d
+Depends: libc, ubusd, ubus, libjson-script, ubox, libubox, libubus
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306207
+Auto-Installed: yes
+
+Package: ubusd
+Version: 2014-09-17-4c4f35cf2230d70b9ddd87638ca911e8a563f2f3
+Depends: libc, libubox
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306206
+Auto-Installed: yes
+
+Package: hostapd-utils
+Version: 2014-06-03.1-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306208
+
+Package: firewall
+Version: 2014-09-19
+Depends: libc, libubox, libubus, libuci, libip4tc, libxtables, kmod-ipt-core, kmod-ipt-nat
+Status: install user installed
+Architecture: realtek
+Conffiles:
+ /etc/config/firewall 9734df4698c5086988ef1b73f5f22f34
+ /etc/firewall.user f482960e5c24821f077e601d9a7f3068
+Installed-Time: 1584306208
+
+Package: luci-app-firewall
+Version: 0.12+git-16.038.38474-0d510b2-1
+Depends: libc, firewall
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306212
+
+Package: kmod-fastpath
+Version: 3.10.49+0.1-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-ipt-core, kmod-ipt-conntrack, kmod-ipt-nat, kmod-ppp
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306209
+
+Package: libuci
+Version: 2014-04-11.1-1
+Depends: libc, libubox
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306206
+Auto-Installed: yes
+
+Package: liblua
+Version: 5.1.5-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306211
+Auto-Installed: yes
+
+Package: libip4tc
+Version: 1.4.21-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306207
+Auto-Installed: yes
+
+Package: fstools
+Version: 2014-06-22-e0430f5c62f367e5a8e02755412977b02c3fc45e
+Depends: libc, ubox
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306208
+
+Package: rtk_app
+Version: 0.1-1
+Depends: libc, libpcap
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306212
+
+Package: uci
+Version: 2014-04-11.1-1
+Depends: libc, libuci
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306212
+
+Package: lua
+Version: 5.1.5-1
+Depends: libc, liblua
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306211
+
+Package: dropbear
+Version: 2014.63-2
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Conffiles:
+ /etc/dropbear/dropbear_rsa_host_key d41d8cd98f00b204e9800998ecf8427e
+ /etc/dropbear/dropbear_dss_host_key d41d8cd98f00b204e9800998ecf8427e
+ /etc/config/dropbear 4ff9c827d4f95ca5082a5520c03e1419
+Installed-Time: 1584306207
+
+Package: kmod-crypto-aes
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-crypto-core
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306209
+
+Package: mtd
+Version: 20
+Depends: libc, libubox
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306211
+
+Package: wpad
+Version: 2014-06-03.1-1
+Depends: libc, libnl-tiny, libubus
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306212
+
+Package: kmod-crypto-core
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb)
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306209
+Auto-Installed: yes
+
+Package: libjson-c
+Version: 0.11-2
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306206
+Auto-Installed: yes
+
+Package: libgcc
+Version: -1
+Status: install hold installed
+Essential: yes
+Architecture: realtek
+Installed-Time: 1584306205
+Auto-Installed: yes
+
+Package: libip6tc
+Version: 1.4.21-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306208
+Auto-Installed: yes
+
+Package: luci-proto-ppp
+Version: 0.12+git-16.038.38474-0d510b2-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306213
+
+Package: ppp
+Version: 2.4.7-2
+Depends: libc, kmod-ppp
+Status: install user installed
+Architecture: realtek
+Conffiles:
+ /etc/ppp/chap-secrets e29cbe6021f13bd9b14d780a80f188ab
+ /etc/ppp/filter 16b01d9201be60c9d1f16dd98f449484
+ /etc/ppp/options 77741c792e70b6c733e6b09be0abfecc
+Installed-Time: 1584306211
+
+Package: luci-mod-admin-full
+Version: 0.12+git-16.038.38474-0d510b2-1
+Depends: libc, luci-base
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306213
+
+Package: libubox
+Version: 2014-08-04-dffbc09baf71b294185a36048166d00066d433b5
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306206
+Auto-Installed: yes
+
+Package: luci-base
+Version: 0.12+git-16.038.38474-0d510b2-1
+Depends: libc, lua, libuci-lua, libubus-lua
+Status: install user installed
+Architecture: realtek
+Conffiles:
+ /etc/config/luci f5cecb0ba00886173676c81239b1bdc2
+Installed-Time: 1584306213
+
+Package: kmod-mac80211
+Version: 3.10.49+2014-05-22-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-crypto-core, kmod-crypto-arc4, kmod-crypto-aes, kmod-cfg80211, hostapd-common
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306210
+
+Package: kmod-rtl8192cd
+Version: 3.10.49+2014-05-22-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-mac80211
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306210
+
+Package: libjson-script
+Version: 2014-08-04-dffbc09baf71b294185a36048166d00066d433b5
+Depends: libc, libubox
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306207
+Auto-Installed: yes
+
+Package: libblobmsg-json
+Version: 2014-08-04-dffbc09baf71b294185a36048166d00066d433b5
+Depends: libc, libjson-c, libubox
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306206
+Auto-Installed: yes
+
+Package: iptables
+Version: 1.4.21-1
+Depends: libc, kmod-ipt-core, libip4tc, libip6tc, libxtables
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306208
+
+Package: kmod-ipt-nathelper
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-ipt-core, kmod-ipt-nat
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306209
+
+Package: jshn
+Version: 2014-08-04-dffbc09baf71b294185a36048166d00066d433b5
+Depends: libc, libjson-c, libubox, libblobmsg-json
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306207
+Auto-Installed: yes
+
+Package: kmod-ipt-core
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb)
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306207
+Auto-Installed: yes
+
+Package: libpcap
+Version: 1.5.3-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306211
+
+Package: kmod-ipv6
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb)
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306209
+
+Package: kmod-ppp
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-lib-crc-ccitt, kmod-slhc
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306209
+Auto-Installed: yes
+
+Package: wpa-cli
+Version: 2014-06-03.1-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306212
+
+Package: libubus
+Version: 2014-09-17-4c4f35cf2230d70b9ddd87638ca911e8a563f2f3
+Depends: libc, libubox
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306206
+Auto-Installed: yes
+
+Package: uhttpd
+Version: 2014-08-25-dabd7dea6445aaa0e5b8d9add1872fa7393b3a85
+Depends: libc, libubox
+Status: install user installed
+Architecture: realtek
+Conffiles:
+ /etc/config/uhttpd 76707e34feb9eca63bd06fed926efd8d
+Installed-Time: 1584306212
+Auto-Installed: yes
+
+Package: libxtables
+Version: 1.4.21-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306207
+Auto-Installed: yes
+
+Package: luci-lib-nixio
+Version: 0.12+git-16.038.38474-0d510b2-1
+Depends: libc, luci-base
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306213
+
+Package: luci
+Version: 0.12+git-16.038.38474-0d510b2-1
+Depends: libc, uhttpd, uhttpd-mod-ubus, luci-mod-admin-full, luci-theme-bootstrap, luci-app-firewall, luci-proto-ppp, libiwinfo-lua, luci-lib-nixio
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306213
+
+Package: ubox
+Version: 2014-09-16-5c45b560bc8c9e13682269ed963a8a4a65959518
+Depends: libc, libubox, ubusd, ubus, libubus, libuci
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306207
+Auto-Installed: yes
+
+Package: kernel
+Version: 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb
+Depends: libc
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306208
+Auto-Installed: yes
+
+Package: libnl-tiny
+Version: 0.1-3
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306206
+Auto-Installed: yes
+
+Package: luci-i18n-english
+Version: 0.12+git-16.038.38474-0d510b2-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306213
+
+Package: uhttpd-mod-ubus
+Version: 2014-08-25-dabd7dea6445aaa0e5b8d9add1872fa7393b3a85
+Depends: libc, uhttpd, libubus, libblobmsg-json
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306212
+
+Package: jsonfilter
+Version: 2014-06-19-cdc760c58077f44fc40adbbe41e1556a67c1b9a9
+Depends: libc, libubox, libjson-c
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306207
+Auto-Installed: yes
+
+Package: hostapd-common
+Version: 2014-06-03.1-1
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306208
+
+Package: wireless-tools
+Version: 29-5
+Depends: libc
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306212
+
+Package: kmod-crypto-arc4
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-crypto-core
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306209
+
+Package: kmod-slhc
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-lib-crc-ccitt
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306209
+Auto-Installed: yes
+
+Package: kmod-cfg80211
+Version: 3.10.49+2014-05-22-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), iw
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306208
+
+Package: ppp-mod-pppoe
+Version: 2.4.7-2
+Depends: libc, kmod-pppoe
+Status: install user installed
+Architecture: realtek
+Installed-Time: 1584306211
+
+Package: kmod-ipt-nat
+Version: 3.10.49-1
+Depends: kernel (= 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb), kmod-ipt-core, kmod-ipt-conntrack
+Status: install hold installed
+Architecture: realtek
+Installed-Time: 1584306208
+Auto-Installed: yes
+

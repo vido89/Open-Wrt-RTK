@@ -1,0 +1,16 @@
+# Configure and build
+
+# !!!!!!! fix paths COMPILER_PATH KERNEL_SOURCE_PATH KERNEL_BUILD_PATH !!!!!!!
+# COMPILER_PATH - Path to gcc binaries
+# KERNEL_SOURCE_PATH - Path to kernel sources
+# KERNEL_BUILD_PATH - Path to kernel output, may be the same as KERNEL_SOURCE_PATH
+
+( export COMPILER_PATH="" ; \
+export KERNEL_SOURCE_PATH="" ; \
+export KERNEL_BUILD_PATH="" ; \
+export COMPILER_NAME="msdk-linux" ; \
+export EXT_MODULE_FLAGS="" ; \
+export COMPILER_TARGET="mips" ; \
+PATH="${COMPILER_PATH}:${PATH}" make ARCH="${COMPILER_TARGET}" CROSS_COMPILE=${COMPILER_NAME}- CROSSCOMPILE=${COMPILER_NAME}- TARGET="${COMPILER_TARGET}" CFLAGS="" clean ; \
+PATH="${COMPILER_PATH}:${PATH}" ./configure CFLAGS="-I$KERNEL_SOURCE_PATH/arch/mips/include -I$KERNEL_BUILD_PATH/arch/mips/include/generated -I$KERNEL_BUILD_PATH/include -I$KERNEL_SOURCE_PATH/arch/mips/include/uapi -I$KERNEL_BUILD_PATH/arch/mips/include/generated/uapi -I$KERNEL_SOURCE_PATH/include/uapi -I$KERNEL_BUILD_PATH/include/generated/uapi -DVMLINUX_LOAD_ADDRESS=0x80000000 -DDATAOFFSET=0 -fno-strict-aliasing -fno-common -fno-delete-null-pointer-checks -mno-check-zero-division -mabi=32 -G 0 -mno-abicalls -fno-pic -pipe -msoft-float -ffreestanding -EB -UMIPSEB -U_MIPSEB -U__MIPSEB -U__MIPSEB__ -UMIPSEL -U_MIPSEL -U__MIPSEL -U__MIPSEL__ -DMIPSEB -D_MIPSEB -D__MIPSEB -D__MIPSEB__ -U_MIPS_ISA -D_MIPS_ISA=_MIPS_ISA_MIPS32 -I$KERNEL_BUILD_PATH/include/asm-mips -I$KERNEL_BUILD_PATH/arch/mips/bsp/ -I$KERNEL_SOURCE_PATH/arch/mips/include/asm/mach-generic -fno-stack-protector -fomit-frame-pointer -fno-strict-overflow -fconserve-stack -ffunction-sections -fdata-sections -mlong-calls -DUFSD_BIGENDIAN -O1" CC=${COMPILER_NAME}-gcc --target=${COMPILER_TARGET} --host=${COMPILER_NAME} --with-ks-dir=${KERNEL_SOURCE_PATH} --with-kb-dir=${KERNEL_BUILD_PATH}  && \
+PATH="${COMPILER_PATH}:${PATH}" make PACKAGE_TAG="lke_9.2.0_r245248_b7" ARCH="${COMPILER_TARGET}" CROSS_COMPILE=${COMPILER_NAME}- CROSSCOMPILE=${COMPILER_NAME}- TARGET="${COMPILER_TARGET}" CFLAGS="-I$KERNEL_SOURCE_PATH/arch/mips/include -I$KERNEL_BUILD_PATH/arch/mips/include/generated -I$KERNEL_BUILD_PATH/include -I$KERNEL_SOURCE_PATH/arch/mips/include/uapi -I$KERNEL_BUILD_PATH/arch/mips/include/generated/uapi -I$KERNEL_SOURCE_PATH/include/uapi -I$KERNEL_BUILD_PATH/include/generated/uapi -DVMLINUX_LOAD_ADDRESS=0x80000000 -DDATAOFFSET=0 -fno-strict-aliasing -fno-common -fno-delete-null-pointer-checks -mno-check-zero-division -mabi=32 -G 0 -mno-abicalls -fno-pic -pipe -msoft-float -ffreestanding -EB -UMIPSEB -U_MIPSEB -U__MIPSEB -U__MIPSEB__ -UMIPSEL -U_MIPSEL -U__MIPSEL -U__MIPSEL__ -DMIPSEB -D_MIPSEB -D__MIPSEB -D__MIPSEB__ -U_MIPS_ISA -D_MIPS_ISA=_MIPS_ISA_MIPS32 -I$KERNEL_BUILD_PATH/include/asm-mips -I$KERNEL_BUILD_PATH/arch/mips/bsp/ -I$KERNEL_SOURCE_PATH/arch/mips/include/asm/mach-generic -fno-stack-protector -fomit-frame-pointer -fno-strict-overflow -fconserve-stack -ffunction-sections -fdata-sections -mlong-calls -DUFSD_BIGENDIAN" EXT_MODULE_FLAGS=" -DUFSD_DISABLE_UGM,-DUFSD_CHECK_BDI,-DUFSD_TRACE" driver )

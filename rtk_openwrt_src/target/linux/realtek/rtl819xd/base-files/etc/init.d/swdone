@@ -1,0 +1,15 @@
+#!/bin/sh /etc/rc.common
+START=99
+
+start() {
+	#reset bootting counter in hw info to indicate booting succesfully	
+	echo 0 > /proc/flash/bootcnt
+	echo 4096 > /proc/sys/vm/min_free_kbytes
+
+	if [ -f "/proc/nandinfo" ]; then
+		mkdir /hw_setting
+		mount -t yaffs2 -o tags-ecc-off /dev/mtdblock1 /hw_setting
+	fi
+}
+
+

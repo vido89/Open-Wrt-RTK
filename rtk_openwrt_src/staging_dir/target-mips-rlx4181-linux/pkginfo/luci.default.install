@@ -1,0 +1,9 @@
+luci-base
+luci-lib-nixio
+luci-proto-ppp
+luci-mod-admin-full
+luci-app-firewall
+luci-theme-openwrt
+luci-theme-bootstrap
+luci-i18n-english
+luci

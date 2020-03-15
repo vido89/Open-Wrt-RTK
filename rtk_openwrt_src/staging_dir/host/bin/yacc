@@ -1,0 +1,2 @@
+#! /bin/sh
+exec '/home/slobodan/openwrt-rtk/rtk_openwrt_src/staging_dir/host/bin/bison' -y "$@"

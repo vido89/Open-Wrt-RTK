@@ -1,0 +1,12 @@
+contrib/package/freifunk-mapupdate
+contrib/package/freifunk-gwcheck
+contrib/package/freifunk-common
+contrib/package/luci-addons
+contrib/package/community-profiles
+contrib/package/freifunk-policyrouting
+contrib/package/meshwizard
+contrib/package/freifunk-p2pblock
+contrib/package/freifunk-firewall
+contrib/package/remote-update
+contrib/package/freifunk-watchdog
+contrib/package/luci

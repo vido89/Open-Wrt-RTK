@@ -1,0 +1,33 @@
+# bluez package config
+
+menu "Serial Chip Selection"
+	depends on PACKAGE_bluez
+
+config SERIAL_RTL_8761A
+	bool "rtl8761a"
+	default y
+	select BUSYBOX_CONFIG_MDEV
+	select BUSYBOX_CONFIG_FEATURE_MDEV_CONF
+	select BUSYBOX_CONFIG_FEATURE_MDEV_RENAME
+	select BUSYBOX_CONFIG_FEATURE_MDEV_RENAME_REGEXP
+	select BUSYBOX_CONFIG_FEATURE_MDEV_EXEC
+    select BUSYBOX_CONFIG_FEATURE_MDEV_LOAD_FIRMWARE
+	help
+	  rtl8761a serial bluetooth chip
+endmenu
+
+menu "USB Chip Selection"
+	depends on PACKAGE_bluez
+
+config USB_RTL_8761A
+	bool "rtl8761a"
+	default n
+	select BUSYBOX_CONFIG_MDEV
+	select BUSYBOX_CONFIG_FEATURE_MDEV_CONF
+	select BUSYBOX_CONFIG_FEATURE_MDEV_RENAME
+	select BUSYBOX_CONFIG_FEATURE_MDEV_RENAME_REGEXP
+	select BUSYBOX_CONFIG_FEATURE_MDEV_EXEC
+    select BUSYBOX_CONFIG_FEATURE_MDEV_LOAD_FIRMWARE
+	help
+	  rtl8761a usb bluetooth chip
+endmenu

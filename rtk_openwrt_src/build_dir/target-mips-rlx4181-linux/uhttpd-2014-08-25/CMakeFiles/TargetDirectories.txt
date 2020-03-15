@@ -1,0 +1,3 @@
+/home/slobodan/OLDopenwrt-rtk/rtk_openwrt_src/build_dir/target-mips-rlx4181-linux/uhttpd-2014-08-25/CMakeFiles/uhttpd.dir
+/home/slobodan/OLDopenwrt-rtk/rtk_openwrt_src/build_dir/target-mips-rlx4181-linux/uhttpd-2014-08-25/CMakeFiles/uhttpd_lua.dir
+/home/slobodan/OLDopenwrt-rtk/rtk_openwrt_src/build_dir/target-mips-rlx4181-linux/uhttpd-2014-08-25/CMakeFiles/uhttpd_ubus.dir

@@ -1,0 +1,145 @@
+#!/usr/bin/env bash
+
+# ==== ====
+#
+#  Fill these three variables - everything else should do the trick automagically
+#
+# COMPILER_PATH - path to gcc binaries
+export COMPILER_PATH=       # e.g., "/path/to/android/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin"
+
+# KERNEL_SOURCE_PATH - path to kernel sources
+export KERNEL_SOURCE_PATH=  # e.g., "/path/to/android/linux/kernel"
+
+# KERNEL_BUILD_PATH - path to kernel output, may be equals KERNEL_SOURCE_PATH
+export KERNEL_BUILD_PATH=   # e.g., "/path/to/android/out/linux"
+
+# ==== ====
+
+export LOG_FILE="build-ufsd.log"
+export LOG_INIT="tee ${LOG_FILE}"
+export LOG_CMD="tee -a ${LOG_FILE}"
+
+echo "INFO: UFSD: build" 2>&1 | ${LOG_INIT}
+
+log()
+{
+	echo "$*" 2>&1 | ${LOG_CMD}
+}
+
+build_ufsd_module()
+{
+	# architecture
+	export COMPILER_NAME="msdk-linux"
+	export COMPILER_ARCH="mips"
+	export COMPILER_TARGET="mips"
+	
+	# flags
+	export PACKAGE_FLAG="lke_9.2.0_r245248_b7"
+	export COMPILER_FLAGS="-I${KERNEL_SOURCE_PATH}/arch/mips/include \
+-I${KERNEL_BUILD_PATH}/arch/mips/include/generated \
+-I${KERNEL_BUILD_PATH}/include \
+-I${KERNEL_SOURCE_PATH}/arch/mips/include/uapi \
+-I${KERNEL_BUILD_PATH}/arch/mips/include/generated/uapi \
+-I${KERNEL_SOURCE_PATH}/include/uapi \
+-I${KERNEL_BUILD_PATH}/include/generated/uapi \
+-DVMLINUX_LOAD_ADDRESS=0x80000000 \
+-DDATAOFFSET=0 \
+-fno-strict-aliasing \
+-fno-common \
+-fno-delete-null-pointer-checks \
+-mno-check-zero-division \
+-mabi=32 \
+-G 0 \
+-mno-abicalls \
+-fno-pic \
+-pipe \
+-msoft-float \
+-ffreestanding \
+-EB \
+-UMIPSEB \
+-U_MIPSEB \
+-U__MIPSEB \
+-U__MIPSEB__ \
+-UMIPSEL \
+-U_MIPSEL \
+-U__MIPSEL \
+-U__MIPSEL__ \
+-DMIPSEB \
+-D_MIPSEB \
+-D__MIPSEB \
+-D__MIPSEB__ \
+-U_MIPS_ISA \
+-D_MIPS_ISA=_MIPS_ISA_MIPS32 \
+-I${KERNEL_BUILD_PATH}/include/asm-mips \
+-I${KERNEL_BUILD_PATH}/arch/mips/bsp/ \
+-I${KERNEL_SOURCE_PATH}/arch/mips/include/asm/mach-generic \
+-fno-stack-protector \
+-fomit-frame-pointer \
+-fno-strict-overflow \
+-fconserve-stack \
+-ffunction-sections \
+-fdata-sections \
+-mlong-calls"
+	
+	export UFSD_FLAGS="-DUFSD_DISABLE_UGM -DUFSD_CHECK_BDI -DUFSD_TRACE"
+	export UFSD_EXT_FLAGS=""
+	export USE_UFSD_UTF8="1"
+	
+	# "disabled UTF8" workaround for android
+	test "${USE_UFSD_UTF8}" -eq 1 && test -z "`grep "^CONFIG_NLS_UTF8=" "${KERNEL_BUILD_PATH}"/.config`" && export UFSD_FLAGS="${UFSD_FLAGS} -DUFSD_BUILTINT_UTF8" && log "==== UFSD: enable builtin utf8"
+	
+	# empty compiler's name workaround
+	if [ -z "${COMPILER_NAME}" ]; then
+		export COMPILER_TRIPLET=
+		export COMPILER_CC=gcc
+	else
+		export COMPILER_TRIPLET="${COMPILER_NAME}-"
+		export COMPILER_CC="${COMPILER_NAME}-gcc"
+	fi;
+	
+	
+	# actions
+	
+	log "==== UFSD: make clean"
+	PATH="${COMPILER_PATH}:${PATH}" \
+		CC=${COMPILER_CC} \
+		CROSS_COMPILE=${COMPILER_TRIPLET} \
+		CROSSCOMPILE=${COMPILER_TRIPLET} \
+		TARGET=${COMPILER_TARGET} \
+		ARCH=${COMPILER_ARCH} \
+		make clean  2>&1 | ${LOG_CMD}
+	
+	log "pwd="
+	pwd 2>&1 | ${LOG_CMD}
+	
+	
+	log "==== UFSD: removing old files"
+	rm -rf config.log config.status Makefile modules.order Module.symvers .tmp_versions .*.cmd *.mod.c *.o *.ko
+	
+	log "==== UFSD: configure"
+	PATH="${COMPILER_PATH}:${PATH}" \
+		CC=${COMPILER_CC} \
+		./configure \
+		CFLAGS="${COMPILER_FLAGS} -O1" \
+		--target=${COMPILER_TARGET} \
+		--host=${COMPILER_NAME} \
+		--with-ks-dir=${KERNEL_SOURCE_PATH} \
+		--with-kb-dir=${KERNEL_BUILD_PATH} \
+		--enable-check-without-libc  2>&1 | ${LOG_CMD}
+	
+	log "==== UFSD: make driver"
+	PATH="${COMPILER_PATH}:${PATH}" \
+		CC=${COMPILER_CC} \
+		CROSS_COMPILE=${COMPILER_TRIPLET} \
+		CROSSCOMPILE=${COMPILER_TRIPLET} \
+		TARGET=${COMPILER_TARGET} \
+		ARCH=${COMPILER_ARCH} \
+		CFLAGS="${COMPILER_FLAGS}" \
+		EXT_MODULE_FLAGS="${UFSD_FLAGS} ${UFSD_EXT_FLAGS}" \
+		PACKAGE_TAG="${PACKAGE_FLAG}" \
+		make driver  2>&1 | ${LOG_CMD}
+}
+
+
+build_ufsd_module
+

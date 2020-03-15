@@ -1,0 +1,47 @@
+--- a/drivers/mtd/nand/Kconfig
++++ b/drivers/mtd/nand/Kconfig
+@@ -544,4 +544,35 @@ config MTD_NAND_XWAY
+ 	  Enables support for NAND Flash chips on Lantiq XWAY SoCs. NAND is attached
+ 	  to the External Bus Unit (EBU).
+ 
++config MTD_NAND_RTK
++	tristate "Realtek NAND Flash Driver"
++	depends on MTD_NAND
++	help
++	  This is Nand flash driver for Realtek.	 
++
++#
++# Nand Flash Bad Block Table Type
++#
++menu "Bad Block Table Type"
++choice
++	prompt "Table Type"
++	depends on MTD_NAND && MTD_NAND_RTK
++	default RTK_REMAP_BBT
++config RTK_NORMAL_BBT
++	bool "Support Normal BBT - default"
++	help
++	  It would create normal bad block table and just only record bad block infomation .
++config RTK_REMAP_BBT
++	bool "Support Remapping BBT"
++	help
++	  It would create remapping bad block table and replace bad block with another good block from RBA.
++endchoice
++endmenu
++
++config IMAGE_HEADER_CHECK
++	tristate "Check the validity of vm.img"
++	depends on MTD_NAND
++	help
++	  It will add another header include checksum between rootfs and kernel image.
++
+ endif # MTD_NAND
+--- a/drivers/mtd/nand/Makefile
++++ b/drivers/mtd/nand/Makefile
+@@ -50,5 +50,6 @@ obj-$(CONFIG_MTD_NAND_JZ4740)		+= jz4740
+ obj-$(CONFIG_MTD_NAND_GPMI_NAND)	+= gpmi-nand/
+ obj-$(CONFIG_MTD_NAND_XWAY)		+= xway_nand.o
+ obj-$(CONFIG_MTD_NAND_BCM47XXNFLASH)	+= bcm47xxnflash/
++obj-$(CONFIG_MTD_NAND_RTK)		+= rtknflash/
+ 
+ nand-objs := nand_base.o nand_bbt.o

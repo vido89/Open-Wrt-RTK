@@ -1,0 +1,5 @@
+/usr/sbin/wpsled
+/usr/sbin/rtk_txcalr
+/usr/sbin/flash
+/usr/sbin/rtk_pcap
+/etc/init.d/rtk_app

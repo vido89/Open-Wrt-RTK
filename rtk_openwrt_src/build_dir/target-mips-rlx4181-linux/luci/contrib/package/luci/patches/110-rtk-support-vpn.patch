@@ -1,0 +1,15 @@
+diff -urN luci_orig/modules/admin-full/luasrc/controller/admin/network.lua luci_patch/modules/admin-full/luasrc/controller/admin/network.lua
+--- luci_orig/modules/admin-full/luasrc/controller/admin/network.lua	2014-12-05 09:53:42.787345030 +0800
++++ luci_patch/modules/admin-full/luasrc/controller/admin/network.lua	2014-12-05 10:00:45.003404777 +0800
+@@ -143,6 +143,11 @@
+ 		page.title  = _("Static Routes")
+ 		page.order  = 50
+ 
++		page  = node("admin", "network", "openvpn")
++		page.target = cbi("admin_network/openvpn")
++		page.title  = _("OpenVPN")
++		page.order  = 65
++
+ 		page = node("admin", "network", "diagnostics")
+ 		page.target = template("admin_network/diagnostics")
+ 		page.title  = _("Diagnostics")

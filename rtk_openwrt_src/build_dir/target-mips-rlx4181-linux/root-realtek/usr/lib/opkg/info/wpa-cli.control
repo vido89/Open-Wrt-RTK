@@ -1,0 +1,9 @@
+Package: wpa-cli
+Version: 2014-06-03.1-1
+Depends: libc
+Source: package/network/services/hostapd
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: realtek
+Installed-Size: 26853
+Description:  WPA Supplicant command line interface

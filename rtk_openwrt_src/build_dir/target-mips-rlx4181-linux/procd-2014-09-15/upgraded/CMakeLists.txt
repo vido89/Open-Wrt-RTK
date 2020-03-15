@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 2.6)
+
+PROJECT(upgraded C)
+ADD_DEFINITIONS(-Os -ggdb -Wall -Werror --std=gnu99 -Wmissing-declarations)
+set(CMAKE_EXE_LINKER_FLAGS "-static -fPIC")
+set(CMAKE_FIND_LIBRARY_SUFFIXES .a)
+set(CMAKE_EXE_LINK_DYNAMIC_C_FLAGS)
+set(CMAKE_EXE_LINK_DYNAMIC_CXX_FLAGS)
+set(CMAKE_SHARED_LIBRARY_C_FLAGS)
+set(CMAKE_SHARED_LIBRARY_CXX_FLAGS)
+set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS)
+set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS)
+ADD_EXECUTABLE(upgraded upgraded.c ../watchdog.c)
+TARGET_LINK_LIBRARIES(upgraded ubox rt -lc -lgcc_pic)
+INSTALL(TARGETS upgraded
+	RUNTIME DESTINATION sbin
+)

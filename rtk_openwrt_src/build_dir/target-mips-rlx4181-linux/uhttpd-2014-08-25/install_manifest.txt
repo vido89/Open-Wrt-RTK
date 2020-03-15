@@ -1,0 +1,3 @@
+/usr/bin/uhttpd
+/usr/lib/uhttpd_lua.so
+/usr/lib/uhttpd_ubus.so

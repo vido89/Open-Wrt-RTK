@@ -1,0 +1,10 @@
+Package: kernel
+Version: 3.10.49-1-8b8ff62d5929771aae380f058f5c30bb
+Depends: libc
+Source: package/kernel/linux
+License: GPLv2
+Section: sys
+Status: unknown hold not-installed
+Architecture: realtek
+Installed-Size: 105
+Description:  Virtual kernel package
